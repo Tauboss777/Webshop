@@ -1,0 +1,26 @@
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product > mat-card > img {
+    object-fit: contain;
+    height: 200px;
+}
+
+.product > mat-card {
+    width: 300px;
+    flex-direction: column;
+    min-height: 350px;
+    display: flex;
+    margin: 20px;
+    align-items: center;
+}
+
+.product > mat-card > button {
+    margin-top: 20px;
+    background-color: #de352f;
+    border: 1px solid;
+    border-color: #a52b27 #9b2824 #6d1815;
+}
