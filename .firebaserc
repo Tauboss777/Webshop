@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webshop-fe507": {
+      "hosting": {
+        "my-webshop": [
+          "webshop-fe507"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webshop-fe507"
+  }
+}

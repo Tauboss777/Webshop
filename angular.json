@@ -100,6 +100,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "my-webshop:build:production",
+            "firebaseProject": "webshop-fe507",
+            "firebaseHostingSite": "webshop-fe507"
+          }
         }
       }
     }

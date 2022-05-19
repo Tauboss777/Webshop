@@ -9,7 +9,7 @@ export class ProductsService {
   private _jsonUrl = 'assets/data/products.json'
 
   constructor(private Http: HttpClient) { }
-
+  
   getJson():Observable<any> {
     return this.Http.get(this._jsonUrl)
   }

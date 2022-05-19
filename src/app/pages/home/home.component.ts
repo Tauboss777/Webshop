@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private api: ProductsService) { }
 
-  items: any;
+  items: any[]=[];
 
   ngOnInit(): void {
     this.getProducts()

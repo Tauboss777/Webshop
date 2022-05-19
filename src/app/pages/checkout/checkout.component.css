@@ -1,0 +1,17 @@
+.checkout {
+    background:none;
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.checkout_empty{
+    margin: 20px 20px 400px 20px ;
+}
+.checkout_subtotal {
+    justify-content: flex-end;
+    margin-left: 20px;
+}
