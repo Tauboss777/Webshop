@@ -16,18 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './components/products/products.component';
 import { CheckoutProductsComponent } from './components/checkout-products/checkout-products.component';
 import { CheckoutSubtotalComponent } from './components/checkout-subtotal/checkout-subtotal.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideStorage,getStorage } from '@angular/fire/storage';
 import { ReactiveFormsModule } from '@angular/forms';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
-import { provideFunctions,getFunctions } from '@angular/fire/functions';
-import { provideMessaging,getMessaging } from '@angular/fire/messaging';
-import { providePerformance,getPerformance } from '@angular/fire/performance';
-import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
@@ -43,6 +35,7 @@ import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config
     CheckoutSubtotalComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -50,16 +43,7 @@ import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config
     MatCardModule,
     HttpClientModule,
     ReactiveFormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage()),
-    provideAnalytics(() => getAnalytics()),
-    provideFunctions(() => getFunctions()),
-    provideMessaging(() => getMessaging()),
-    providePerformance(() => getPerformance()),
-    provideRemoteConfig(() => getRemoteConfig())
+
   ],
   providers: [
     ScreenTrackingService,UserTrackingService

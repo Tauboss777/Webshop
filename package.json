@@ -21,6 +21,8 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@firebase/app-compat": "^0.1.25",
+    "@firebase/auth-compat": "^0.2.14",
     "firebase": "^9.8.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

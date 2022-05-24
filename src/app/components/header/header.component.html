@@ -1,24 +1,25 @@
 <div class="header">
   <nav class="header_top">
     <div class="header_menu">
-      <div class="header_menu_icon" routerLink="/">
+      <div class="header_menu_icon header-item" routerLink="/">
         <mat-icon>menu</mat-icon>
       </div>
       <img routerLink="/" src="https://cdn.dribbble.com/users/64815/screenshots/1518220/attachments/229248/shop_logo_big.png?compress=1&resize=400x300&vertical=top" 
-      class="header_menu_logo">
+      class="header_menu_logo header-item">
       <div class="header_menu_searchbar">
         <input type="text" class="header_menu_input">
         <mat-icon class="header_menu_searchbar_icon">search</mat-icon>
       </div>
-      <div routerLink="/login" class="header_menu_signin">
-        <span class="header_menu_top_item">Anmelden</span>
+      <div class="header_menu_signin header-item">
+        <span (click)="signOut()" class="header_menu_top_item" *ngIf="auth.isLoggedIn()">Hallo, {{ auth.getUser() }}</span>
+        <span routerLink="/login" class="header_menu_top_item" *ngIf="!auth.isLoggedIn()">Anmelden</span>
         <span class="header_menu_bottom_item">Konto und Listen</span>
       </div>
-      <div routerLink="/login" class="header_menu_signin">
+      <div routerLink="/login" class="header_menu_signin header-item">
         <span class="header_menu_top_item">Warenrücksendungen</span>
         <span class="header_menu_bottom_item">und Bestellungen</span>
       </div>
-      <div routerLink="/checkout" class="header_menu_cart">
+      <div routerLink="/checkout" class="header_menu_cart header-item">
         <mat-icon>shopping_cart</mat-icon>
         <p class="header_cart_number"> {{shoppingCart.getCartLength()}} </p>
       </div>

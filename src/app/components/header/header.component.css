@@ -2,6 +2,7 @@
   position: sticky;
   z-index: 100;
   top: 0;
+  cursor: pointer;
 }
 
 .header_top {
@@ -15,6 +16,14 @@
     
 }
 
+/* .header-item :hover{
+    border: red 1px solid;
+}
+
+.header-item {
+    padding: 0.5em;
+} */
+
 .header_menu {
     display: flex;
     padding: 10px 8px 8px 8px;
@@ -27,7 +36,8 @@
 
 .header_menu_icon > mat-icon {
     font-size: 30px;
-    align-items: center;   
+    align-items: center;
+    cursor: pointer;   
 }
 
 .header_menu_searchbar {
@@ -97,10 +107,4 @@
     padding-left: 8px;
     font-size: 12px;
 
-}
-
-.header_bottom_location_text {
-    color: white;
-    display: flex;
-    flex-direction: column;
 }
