@@ -1,14 +1,33 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore'
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+import { User } from './user.model'
+import firebase from 'firebase/compat/app';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  user$: Observable<User | undefined | null>;
   userData: any;
 
-  constructor( public fbAuth: AngularFireAuth, private ngZone: NgZone, private router: Router) { 
+  constructor( public fbAuth: AngularFireAuth,private afs: AngularFirestore, private ngZone: NgZone, private router: Router) { 
+
+    this.user$ = this.fbAuth.authState.pipe(
+      switchMap(user => {
+          // Logged in
+        if (user) {
+          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+        } else {
+          // Logged out
+          return of(null);
+        }
+      })
+    )
+
     this.fbAuth.authState.subscribe((user: any) =>{
       if(user) {
         this.userData = user;
@@ -16,6 +35,36 @@ export class AuthService {
       }
     })
   }
+  
+// Google LogIN
+
+  async googleSignin() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const credential = await this.fbAuth.signInWithPopup(provider);
+    return this.updateUserData(credential.user);
+  }
+
+  private updateUserData(user: any) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+
+    const data = { 
+      uid: user.uid, 
+      email: user.email, 
+      displayName: user.displayName, 
+      photoURL: user.photoURL
+    } 
+
+    return userRef.set(data, { merge: true })
+
+  }
+
+  async googleSignOut() {
+    await this.fbAuth.signOut();
+    this.router.navigate(['/']);
+  }
+
+
+  //Normal LogIN
 
   signIN(email: any, password: any) {
     return this.fbAuth.signInWithEmailAndPassword(email, password)

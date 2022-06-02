@@ -8,9 +8,35 @@
                 <h5>Passwort</h5>
                 <input type="password" formControlName = "password">
                 <button class="login_button" (click)="signIn()">Anmelden</button>
+                <p>Oder Anmelden mit Google</p>
+                <button (click)="auth.googleSignin()">
+                    <i class="fa fa-google"></i> Anmelden mit Google
+                </button>
                 <p class="login_terms">Mit dem Anmelden auf dieser Seite, geben sie mir die Erlaubnis all ihre Daten zu klauen.</p>
                 <button class="create_account_button" (click)="createAccount()" >Konto erstellen</button>
             </form>
         </div>
     </div>
 </div>
+
+<div *ngIf="auth.user$ | async; then authenticated else guest">
+</div>
+
+<ng-template #guest>
+<h3>Hallo, Gast</h3>
+<p>Melde dich an...</p>
+
+<button (click)="auth.googleSignin()">
+    <i class="fa fa-google"></i> Connect Google
+</button>
+
+</ng-template>
+
+
+<ng-template #authenticated>
+<div *ngIf="auth.user$ | async as user">
+    <h3>Hallo, {{ user.displayName }}</h3>
+    <p>UID: {{ user.uid }}</p>
+    <button (click)="auth.googleSignOut()">Abmelden</button>
+</div>
+</ng-template>

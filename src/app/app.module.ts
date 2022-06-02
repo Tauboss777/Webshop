@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
@@ -18,8 +16,12 @@ import { CheckoutProductsComponent } from './components/checkout-products/checko
 import { CheckoutSubtotalComponent } from './components/checkout-subtotal/checkout-subtotal.component';
 import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
-import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
+import { ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { AngularFireModule } from '@angular/fire/compat';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularMaterialModule } from './modules/material.module';
 
 @NgModule({
   declarations: [
@@ -32,18 +34,19 @@ import { AngularFireModule } from '@angular/fire/compat';
     BannerComponent,
     ProductsComponent,
     CheckoutProductsComponent,
-    CheckoutSubtotalComponent
+    CheckoutSubtotalComponent,
+    UserProfileComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule,
-    MatCardModule,
     HttpClientModule,
     ReactiveFormsModule,
-
+    AngularMaterialModule
   ],
   providers: [
     ScreenTrackingService,UserTrackingService
