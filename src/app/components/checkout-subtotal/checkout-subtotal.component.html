@@ -1,10 +1,6 @@
 <div class="subtotal" *ngIf="shoppingCart.getCartLength() > 0">
     <p>Zwischensumme: ({{shoppingCart.getCartLength()}} Produkte) 
         <strong>€{{shoppingCart.getTotal()}}</strong></p>
-        <div class="subtotal_gift">
-            <input type="checkbox"/>
-           <p>Bestellung ist ein Geschenk</p> 
-        </div>
         <button>Weiter zum Checkout</button>
 
 

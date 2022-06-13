@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   }
 
   getProducts() {
-    this.api.getJson().subscribe(resp =>{
+    this.api.getProducts().subscribe(resp =>{
       this.items = resp
     })
   }

@@ -36,12 +36,6 @@ form >input {
     width: 98%;
 }
 
-/* .login_logo {
-    object-fit: contain;
-    width: 100px;
-    margin: 12px 20px 0px 2px;
-} */
-
 .login_button {
     background-color: #de352f;
     border: 1px solid;
@@ -60,4 +54,8 @@ form >input {
     height: 30px;
     color: black;
     border-color: darkblue;
+}
+.text {
+    margin: 10px;
+    text-align: center;
 }

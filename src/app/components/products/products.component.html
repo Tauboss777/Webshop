@@ -3,9 +3,15 @@
         <mat-card>
             <p>  {{item.title}}  </p>
             <p><strong> {{item.price}}€ </strong></p>
+            <button mat-raised-button
+                    matTooltip={{item.description}}
+                    aria-label="Button that displays a tooltip when focused or hovered over"
+                    class="btn btn-link">
+                    Beschreibung
+            </button>
             <img src="{{item.image}}" class="product_image">
-            <p>Rating:{{item.ratings}} </p>
-            <button (click)="addToCart(item)">Add to cart</button>
+            <p>Kategorie: {{item.category}} </p>
+            <button (click)="addToCart(item)" class="cartButton">Warenkorb</button>
         </mat-card>
     </div>
 </div>

@@ -18,7 +18,6 @@ import { environment } from '../environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { AngularFireModule } from '@angular/fire/compat';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularMaterialModule } from './modules/material.module';
@@ -35,7 +34,6 @@ import { AngularMaterialModule } from './modules/material.module';
     ProductsComponent,
     CheckoutProductsComponent,
     CheckoutSubtotalComponent,
-    UserProfileComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
