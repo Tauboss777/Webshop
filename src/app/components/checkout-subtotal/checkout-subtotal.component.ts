@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout-subtotal',
@@ -8,9 +9,12 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 })
 export class CheckoutSubtotalComponent implements OnInit {
 
-  constructor(public shoppingCart: ShoppingCartService) { }
+  constructor(public shoppingCart: ShoppingCartService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  makeOrder(pageName: string):void {
+    this.router.navigate(['../order']);
+  }
 }

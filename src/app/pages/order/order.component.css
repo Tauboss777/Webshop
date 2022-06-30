@@ -1,0 +1,11 @@
+.order {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+.order > h1 {
+    font-style: bold;
+    font-weight: 700;
+}

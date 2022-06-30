@@ -21,6 +21,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularMaterialModule } from './modules/material.module';
+import { OrderComponent } from './pages/order/order.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AngularMaterialModule } from './modules/material.module';
     ProductsComponent,
     CheckoutProductsComponent,
     CheckoutSubtotalComponent,
+    OrderComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

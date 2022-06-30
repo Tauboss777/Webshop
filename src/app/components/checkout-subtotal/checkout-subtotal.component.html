@@ -1,7 +1,5 @@
 <div class="subtotal" *ngIf="shoppingCart.getCartLength() > 0">
     <p>Zwischensumme: ({{shoppingCart.getCartLength()}} Produkte) 
         <strong>€{{shoppingCart.getTotal()}}</strong></p>
-        <button>Weiter zum Checkout</button>
-
-
+        <button (click)="makeOrder('order')">Bestellen</button>
 </div>
