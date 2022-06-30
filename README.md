@@ -1,4 +1,67 @@
-# MyWebshop
+# LowBudgetAmazonClone
+
+Projekt von Daniel Taube im Kurs Web-Engineering 2 TINF20AI2.
+Die Applikation stellt einen WebShop dar, der stark an Amazon angelegt ist.
+Die Api die ich dafür genutzt hab war die Fake Store API (https://fakestoreapi.com/).
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://dhbwvilas-20ai2webengii-2o7qyn5yigp.ws-eu51.gitpod.io/)
+
+## **Quick Start Guide**
+
+### Applikation Aufrufen
+
+Die Empfohlenen möglichkeiten, um die Applikation zu starten sind:
+
+1. Über Gitpod
+2. Über den Link: https://webshop-fe507.web.app/
+3. Lokales ausführen mit `ng serve´
+
+### Nutzerprofil
+
+Zum Einloggen kann der Account
+
+- email: user@user.de
+- Passwort: sh7up#KT!
+
+verwendet werden. Alternativ kann ein neuer Account über die Registrierung erstellt werden, oder das Google-Login kann benutzt werden.
+
+## Verwendete Technologien
+
+- Angular 13
+  - Angular Material
+  - Angular Fire
+- Firebase
+  - Firestore
+  - Firebase hosting
+  - Firebase authentication
+- [Fake Store Api] (https://fakestoreapi.com/)
+
+## **Features:**
+
+- Login
+  - Firebase Login/Registrierung mit Email/Passwort oder Google
+- Warenkorb
+  - Hinzufügen/Entfernen zum Warenkorb
+- Bestellungen
+  - Abschließen einer Bestellung
+- Infos zu Produkten mit Hover anzeigen lassen
+
+## Pages
+
+- Login/Register
+- Home (Landing Page der Seite)
+- Warenkorb
+- Order
+
+## **Ordner Struktur**
+
+- components
+  - Hier befinden sich alle wiederverwendbare UI Komponenten
+- pages
+  - In diesem Ordner befinden sich die verschiedenen Hauptseiten der Anwendung, die der Nutzer über die Routen einsehen kann
+- Models und Modules
+- Services
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
