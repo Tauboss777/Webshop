@@ -62,6 +62,9 @@ verwendet werden. Alternativ kann ein neuer Account über die Registrierung erst
 - Models und Modules
 - Services
 
+## Probleme
+Leider war ich die Woche die wir nach den Klausuren extra hatten krank und konnte hinten raus nicht mehr so viel umsetzen wie ich geplant hatte. Ich hatte Gott sei dank schon recht viel am Anfang des Semesters erledigt.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
